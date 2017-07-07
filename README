@@ -1,0 +1,4 @@
+StartRunning.py是启动文件
+GlobalParams.py 是连接手机的参数，全局的
+common 里是通用方法
+Shopping_Cart 是购物车的测试例
