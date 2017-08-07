@@ -189,9 +189,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>自动化测试例结果</h1>
-<p class='attribute'><strong>Start Time:</strong> 2017-07-06 18:01:44</p>
-<p class='attribute'><strong>Duration:</strong> 0:01:10.212736</p>
-<p class='attribute'><strong>Status:</strong> Error 2</p>
+<p class='attribute'><strong>Start Time:</strong> 2017-08-07 18:50:45</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:11.469923</p>
+<p class='attribute'><strong>Status:</strong> Pass 1 Error 1</p>
 
 <p class='description'>购物车测试例执行结果</p>
 </div>
@@ -224,44 +224,28 @@ function showOutput(id, name) {
 <tr class='errorClass'>
     <td>Shopping_Cart.item_checkout.itemCheckout</td>
     <td>2</td>
+    <td>1</td>
     <td>0</td>
-    <td>0</td>
-    <td>2</td>
+    <td>1</td>
     <td><a href="javascript:showClassDetail('c1',2)">Detail</a></td>
 </tr>
 
-<tr id='ft1.1' class='none'>
-    <td class='errorCase'><div class='testcase'>intoShoppingCart</div></td>
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>intoShoppingCart</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
-        error</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
 
-    <div id='div_ft1.1' class="popup_window">
+    <div id='div_pt1.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-ft1.1: Traceback (most recent call last):
-  File "D:\workspace_2\Shopping_Cart\item_checkout.py", line 27, in intoShoppingCart
-    element_cart = driver.find_element_by_xpath("//android.widget.FrameLayout/android.widget.TabWidget/android.widget.FrameLayout[4]")
-  File "C:\Python\Python36-32\lib\site-packages\selenium-2.47.1-py3.6.egg\selenium\webdriver\remote\webdriver.py", line 253, in find_element_by_xpath
-    return self.find_element(by=By.XPATH, value=xpath)
-  File "C:\Python\Python36-32\lib\site-packages\selenium-2.47.1-py3.6.egg\selenium\webdriver\remote\webdriver.py", line 707, in find_element
-    {'using': by, 'value': value})['value']
-  File "C:\Python\Python36-32\lib\site-packages\selenium-2.47.1-py3.6.egg\selenium\webdriver\remote\webdriver.py", line 196, in execute
-    self.error_handler.check_response(response)
-  File "C:\Python\Python36-32\lib\site-packages\appium_python_client-0.24-py3.6.egg\appium\webdriver\errorhandler.py", line 29, in check_response
-    raise wde
-  File "C:\Python\Python36-32\lib\site-packages\appium_python_client-0.24-py3.6.egg\appium\webdriver\errorhandler.py", line 24, in check_response
-    super(MobileErrorHandler, self).check_response(response)
-  File "C:\Python\Python36-32\lib\site-packages\selenium-2.47.1-py3.6.egg\selenium\webdriver\remote\errorhandler.py", line 181, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchElementException: Message: An element could not be located on the page using the given search parameters.
-
+pt1.1: case1: into shopping cart OK
 
 
         </pre>
@@ -286,24 +270,15 @@ selenium.common.exceptions.NoSuchElementException: Message: An element could not
         </div>
         <pre>
         
-ft1.2: Traceback (most recent call last):
-  File "D:\workspace_2\Shopping_Cart\item_checkout.py", line 35, in singleItemCheckout
-    is_cart_empty =  WebDriverWait(driver, 3).until(lambda x: x.find_element_by_id("com.mia.miababy:id/gohome_button"))
-  File "C:\Python\Python36-32\lib\site-packages\selenium-2.47.1-py3.6.egg\selenium\webdriver\support\wait.py", line 67, in until
-    value = method(self._driver)
-  File "D:\workspace_2\Shopping_Cart\item_checkout.py", line 35, in &lt;lambda&gt;
-    is_cart_empty =  WebDriverWait(driver, 3).until(lambda x: x.find_element_by_id("com.mia.miababy:id/gohome_button"))
-  File "C:\Python\Python36-32\lib\site-packages\selenium-2.47.1-py3.6.egg\selenium\webdriver\remote\webdriver.py", line 229, in find_element_by_id
-    return self.find_element(by=By.ID, value=id_)
-  File "C:\Python\Python36-32\lib\site-packages\selenium-2.47.1-py3.6.egg\selenium\webdriver\remote\webdriver.py", line 707, in find_element
-    {'using': by, 'value': value})['value']
-  File "C:\Python\Python36-32\lib\site-packages\selenium-2.47.1-py3.6.egg\selenium\webdriver\remote\webdriver.py", line 196, in execute
-    self.error_handler.check_response(response)
-  File "C:\Python\Python36-32\lib\site-packages\appium_python_client-0.24-py3.6.egg\appium\webdriver\errorhandler.py", line 24, in check_response
-    super(MobileErrorHandler, self).check_response(response)
-  File "C:\Python\Python36-32\lib\site-packages\selenium-2.47.1-py3.6.egg\selenium\webdriver\remote\errorhandler.py", line 104, in check_response
-    message = value['message']
-KeyError: 'message'
+ft1.2: The Shopping cart is empty
+Traceback (most recent call last):
+  File "D:\workspace_2\Shopping_Cart\item_checkout.py", line 50, in singleItemCheckout
+    actions.swipToUp(driver, 0.5,1)
+  File "D:\workspace_2\common\actions.py", line 14, in swipToUp
+    size = getSize(driver)
+  File "D:\workspace_2\common\actions.py", line 9, in getSize
+    width = x[0]
+KeyError: 0
 
 
         </pre>
@@ -316,9 +291,9 @@ KeyError: 'message'
 <tr id='total_row'>
     <td>Total</td>
     <td>2</td>
+    <td>1</td>
     <td>0</td>
-    <td>0</td>
-    <td>2</td>
+    <td>1</td>
     <td>&nbsp;</td>
 </tr>
 </table>
